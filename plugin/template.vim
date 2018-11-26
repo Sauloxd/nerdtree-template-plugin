@@ -31,8 +31,7 @@ function! g:NERDTreeCreateFromTemplate()
 endfunction
 
 function! g:TemplatesComponent(name)
-  let curDirNode = g:NERDTreeFileNode.GetSelected()
-	let l:template = 'component'
+  let l:template = 'component'
   let treenode = g:NERDTreeFileNode.GetSelected()
 
   if !treenode.path.isDirectory
