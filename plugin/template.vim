@@ -1,11 +1,8 @@
-echo 'plugin started!'
-
 if exists('g:loaded_nerdtree_template')
     finish
 endif
 
 let g:loaded_nerdtree_template = 1
-let g:TEMPLATES_BASE_PATH = ''
 let s:TemplateBashUtils = {}
 
 call NERDTreeAddMenuItem({'text': '(t)emplate', 'shortcut': 't', 'callback': 'NERDTreeCreateFromTemplate'})
