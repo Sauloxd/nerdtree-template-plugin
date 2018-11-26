@@ -5,12 +5,17 @@ if exists('g:loaded_nerdtree_template')
 endif
 
 let g:loaded_nerdtree_template = 1
-let g:TEMPLATES_BASE_PATH = '~/dev/github/nerdtree-template-plugin/nerdtree_plugin/templates'
+let g:TEMPLATES_BASE_PATH = ''
 let s:TemplateBashUtils = {}
 
 call NERDTreeAddMenuItem({'text': '(t)emplate', 'shortcut': 't', 'callback': 'NERDTreeCreateFromTemplate'})
 
 function! g:NERDTreeCreateFromTemplate()
+  if empty(g:TEMPLATES_BASE_PATH)
+    call nerdtree#echo("Please set g:TEMPLATES_BASE_PATH correctly!")
+    return
+  endif
+
   let templateType = input("Select from available templates:\n".
                          \ "==========================================================\n".
                          \ "(c)omponent\n".
