@@ -19,7 +19,7 @@ function! g:NERDTreeCreateFromTemplate()
                          \ "e(x)it\n")
 
   if templateType ==# 'c'
-    let componentName = input("\nWhat\'s the component name?:\n")
+    let componentName = input("\nWhat\'s the component name?\n")
     call g:TemplatesComponent(componentName)
   elseif templateType ==# 'x'
     call nerdtree#echo("Node Creation Aborted.")
@@ -65,14 +65,3 @@ function! s:TemplateBashUtils.replaceNamePlaceholderInFileName(destination, name
       \ a:destination . "/". "${file//a:name/" . a:name . "};".
       \ "done")
 endfunction
-
-
-
-
-
-
-
-
-
-
-
